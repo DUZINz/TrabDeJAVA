@@ -1,12 +1,18 @@
-public class Carro {
+public class Carro extends Veiculo{
+
+    private static int numchassi;
     private String nome;
     private String modelo;
     private int ano;
 
     public Carro (String nome, String modelo, int ano) {
+
+        super(nome, modelo, ano, numchassi, modelo);
+
         this.nome = nome;
         this.modelo = modelo;
         this.ano = ano;
+        
         }
 
         public String getNome(){
