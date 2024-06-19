@@ -1,17 +1,18 @@
 public class Carro extends Veiculo{
 
-    private static int numchassi;
+    private int numchassi;
     private String nome;
     private String modelo;
     private int ano;
 
-    public Carro (String nome, String modelo, int ano) {
+    public Carro (String nome, String modelo, int ano, int numchassi) {
 
         super(nome, modelo, ano, numchassi, modelo);
 
         this.nome = nome;
         this.modelo = modelo;
         this.ano = ano;
+        this.numchassi = numchassi;
         
         }
 
@@ -42,6 +43,7 @@ public class Carro extends Veiculo{
             ", nome='" + nome + '\'' +
             ", modelo='" + modelo + '\'' +
             ", ano='" + ano + '\'' +
+            ", Número do chassi='" + numchassi + '\'' +
             '}'; 
         }
 }
