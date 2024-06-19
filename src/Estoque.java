@@ -1,4 +1,5 @@
 public class Estoque {
+
     private String id;
     private String nome;
     private String descrição;
@@ -16,7 +17,7 @@ public class Estoque {
     }
 
     public void setID(String id) {
-        id = id;
+        this.id = id;
     }
 
     public String getNome() {
@@ -24,7 +25,7 @@ public class Estoque {
     }
 
     public void setNome(String nome) {
-        nome = nome;
+        this.nome = nome;
     }
 
     public String getDescrição() {
@@ -32,7 +33,7 @@ public class Estoque {
     }
 
     public void setDescrição(String descrição) {
-        descrição = descrição;
+        this.descrição = descrição;
     }
 
     public Float getValor_Custo() {
