@@ -5,10 +5,10 @@ public class Pecas extends Estoque{
     private Float valor_custo;
         public Pecas(String id, String nome, String descrição, Float valor_Custo) {
             super(id, nome, descrição, valor_Custo);
-            id = id;
-            nome = nome;
+            this.id = id;
+            this.nome = nome;
             this.description = description;
-            valor_custo = valor_custo;
+            this.valor_custo = valor_custo;
         }
         public String getId() {
             return id;
