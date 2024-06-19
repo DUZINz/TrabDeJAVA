@@ -6,14 +6,15 @@ public class Pessoa {
     private String email;
     private String telefone_Celular;
 
-
+    
     public Pessoa(String nome, String cpf, String endereco, String email, String telefone_Celular) {
+
         this.nome = nome;
         this.cpf = cpf;
         this.endereco = endereco;
         this.email = email;
         this.telefone_Celular = telefone_Celular;
-
+        
     }
 
 
