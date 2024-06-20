@@ -6,8 +6,7 @@ public class Carro extends Veiculo{
     private int ano;
 
     public Carro (String nome, String modelo, int ano, int numchassi) {
-
-        super(nome, modelo, ano, numchassi, modelo);
+         super(nome, modelo, ano, numchassi, modelo);
 
         this.nome = nome;
         this.modelo = modelo;
