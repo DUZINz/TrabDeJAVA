@@ -8,7 +8,7 @@ public class Gerente extends Pessoa{
     private String telefone_Celular;
 
     public Gerente(int idade, String nome, String cpf, String endereco, String email, String telefone_Celular) {
-        super(nome, cpf, endereco, email, telefone_Celular);
+        super(nome, idade, cpf, endereco, email, telefone_Celular);
 
         this.idade = idade;
         this.nome = nome;
