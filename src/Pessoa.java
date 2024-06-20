@@ -1,15 +1,17 @@
 public class Pessoa {
 
     private String nome;
+    private int idade;
     private String cpf;
     private String endereco;
     private String email;
     private String telefone_Celular;
 
     
-    public Pessoa(String nome, String cpf, String endereco, String email, String telefone_Celular) {
+    public Pessoa(String nome, int idade, String cpf, String endereco, String email, String telefone_Celular) {
 
         this.nome = nome;
+        this.idade = idade;
         this.cpf = cpf;
         this.endereco = endereco;
         this.email = email;
@@ -24,6 +26,14 @@ public class Pessoa {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public int getIdade(){
+        return idade;
+    }
+
+    public void setIdade(int idade){
+        this.idade = idade;
     }
 
     public String getCpf() {
@@ -61,11 +71,12 @@ public class Pessoa {
     @Override
     public String toString() {
         return "Pessoa{" +
-                "nome='" + nome + '\'' +
+                "Nome='" + nome + '\'' +
+                "Idade='" + idade + '\'' +
                 ", cpf='" + cpf + '\'' +
-                ", endereco='" + endereco + '\'' +
-                ", email='" + email + '\'' +
-                ", telefone_Celular='" + telefone_Celular + '\'' +
+                ", Endereco='" + endereco + '\'' +
+                ", Email='" + email + '\'' +
+                ", Telefone Celular='" + telefone_Celular + '\'' +
                 '}';
     }
 }
