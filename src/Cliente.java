@@ -8,7 +8,7 @@ public class Cliente extends Pessoa{
     private String telefone_Celular;
 
     public Cliente(String nome, int idade, String cpf, String endereco, String email, String telefone_Celular) {
-        super(nome, cpf, endereco, email, telefone_Celular);
+        super(nome, idade, cpf, endereco, email, telefone_Celular);
 
         this.nome = nome;
         this.idade = idade;
