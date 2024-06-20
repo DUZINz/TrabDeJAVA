@@ -6,10 +6,12 @@ public class Estoque {
     private Float valor_Custo;
 
     public Estoque(String id, String nome, String descrição, Float valor_Custo) {
+
         this.id = id;
         this.nome = nome;
         this.descrição = descrição;
         this.valor_Custo = valor_Custo;
+        
     }
 
     public String getID() {
