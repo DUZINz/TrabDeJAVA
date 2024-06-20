@@ -94,10 +94,11 @@ public class Veiculo {
     @Override
     public String toString() {
         return "Veículo{" +
-                "Modelo='" + modelo + '\'' +
-                ", Ano='" + ano + '\'' +
-                ", Numchassi='" + numchassi + '\'' +
-                ", Cor='" + cor + '\''+'}';
+        "nome='" + nome + '\'' +
+        "Modelo='" + modelo + '\'' +
+        ", Ano='" + ano + '\'' +
+        ", Numchassi='" + numchassi + '\'' +
+        ", Cor='" + cor + '\''+'}';
     }
 
 }
