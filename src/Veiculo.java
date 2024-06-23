@@ -93,6 +93,7 @@ public class Veiculo {
 
     @Override
     public String toString() {
+        
         return "Veículo{" +
         "nome='" + nome + '\'' +
         "Modelo='" + modelo + '\'' +

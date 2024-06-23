@@ -1,5 +1,9 @@
-public class Estoque {
+import java.util.ArrayList;
+import java.util.List;
 
+public class Estoque<E> {
+
+    private List<E> itens;
     private String id;
     private String nome;
     private String descrição;
@@ -7,6 +11,7 @@ public class Estoque {
 
     public Estoque(String id, String nome, String descrição, Float valor_Custo) {
 
+        this.itens = new ArrayList<>();
         this.id = id;
         this.nome = nome;
         this.descrição = descrição;
@@ -46,6 +51,30 @@ public class Estoque {
         this.valor_Custo = valor_Custo;
     }
 
+    public List<E> getItens() {
+        return itens;
+    }
+
+    public void setItens(List<E> itens) {
+        this.itens = itens;
+    }
+
+    public void adicionar(E item){
+        itens.add(item);
+    }
+
+    public void removeItem(E item){
+        itens.remove(item);
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     @Override
     public String toString(){
         return  "Estoque{"   +
@@ -53,6 +82,7 @@ public class Estoque {
                 ", Nome='" + nome + '\'' +
                 ", Descrição='" + descrição + '\'' +
                 ", valor_Custo='" + valor_Custo + '\'' +
+                ", Itens" + itens +
                 '}';
     }
 
