@@ -1,12 +1,12 @@
 public class Carro extends Veiculo {
 
-    private int numchassi;
+    private String numchassi;
     private String nome;
     private String modelo;
     private String marca;
     private int ano;
 
-    public Carro(String nome, String modelo, String marca, int ano, int numchassi) {
+    public Carro(String nome, String modelo, String marca, int ano, String numchassi) {
         super(nome, modelo, marca, ano, numchassi, modelo);
 
         this.nome = nome;
@@ -17,11 +17,11 @@ public class Carro extends Veiculo {
 
     }
 
-    public int getNumchassi() {
+    public String getNumchassi() {
         return numchassi;
     }
 
-    public void setNumchassi(int numchassi) {
+    public void setNumchassi(String numchassi) {
         this.numchassi = numchassi;
     }
 

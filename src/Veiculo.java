@@ -4,16 +4,16 @@ public class Veiculo {
     private String modelo;
     private String marca;
     private int ano;
-    protected int numchassi;
+    protected String numchassi;
     private String cor;
     protected boolean ligar;
     protected boolean desligar;
 
-    public Veiculo(String nome, String modelo, String marca, int ano, int numchassi, String cor) {
+    public Veiculo(String nome, String modelo, String marca, int ano, String numchassi, String cor) {
 
         this.nome = nome;
         this.modelo = modelo;
-        this.modelo = modelo;
+        this.marca = marca;
         this.ano = ano;
         this.numchassi = numchassi;
         this.cor = cor;
@@ -52,11 +52,11 @@ public class Veiculo {
         this.ano = ano;
     }
 
-    public int getNumchassi() {
+    public String getNumchassi() {
         return numchassi;
     }
 
-    public void setNumchassi(int numchassi) {
+    public void setNumchassi(String numchassi) {
         this.numchassi = numchassi;
     }
 
