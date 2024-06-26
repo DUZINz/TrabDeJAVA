@@ -16,6 +16,9 @@ public class Main{
         Carro carro = new Carro(null, null, 0, 0);
         Carro carro2 = new Carro(null, null, 0, 0);
 
+        Caminhonete caminhonete = new Caminhonete(null, null, 0, 0);
+        Caminhonete caminhonete2 = new Caminhonete(null, null, 0, 0);
+
         // Desenvolçvimento do extend Estoque
         Pecas pecas = new Pecas(null, null, null, null);
         Pecas pecas2 = new Pecas(null, null, null, null);
