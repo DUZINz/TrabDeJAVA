@@ -48,4 +48,9 @@ public class Carro extends Veiculo {
                 ", Número do chassi='" + numchassi + '\'' +
                 '}';
     }
+
+    public int getId() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getId'");
+    }
 }
