@@ -3,80 +3,154 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ConcessionariaApp {
+
     private List<Pecas> pecas;
     private List<Carro> carros;
+    private List<Caminhonete> caminhonetes;
+    private List<Funcionario> funcionarios;
+    private List<Estoque> estoques;
     private List<Gerente> gerentes;
     private List<Estagiario> estagiarios;
 
     public ConcessionariaApp() {
+
         pecas = new ArrayList<>();
         carros = new ArrayList<>();
+        caminhonetes = new ArrayList<>();
+        estoque = new ArrayList<>();
         gerentes = new ArrayList<>();
         estagiarios = new ArrayList<>();
+        funcionaris = new ArrayList<>();
     }
 
     // Métodos para adicionar entidades
     public void adicionarPeca(int id, String nome, double preco) {
-        Pecas peca = new Peca(id, nome, preco);
-        pecas.add(peca);
+
+        Pecas pecas = new Pecas(nome, nome, nome, null);
+        pecas.add(pecas);
         System.out.println("Peça adicionada com sucesso.");
     }
 
     public void adicionarCarro(int id, String marca, String modelo) {
-        Carro carro = new Carro(id, marca, modelo);
+
+        Carro carro = new Carro(marca, modelo, id, id);
         carros.add(carro);
         System.out.println("Carro adicionado com sucesso.");
     }
 
+    public void adicionarCaminhonete(int id, String marca, String modelo) {
+        
+        Caminhonete caminhonete = new Caminhonete(marca, modelo, id, id);
+        caminhonetes.add(caminhonete);
+        System.out.println("Caminhonete adicionado com sucesso.");
+    }
+
+    public void adicionarEstoque(int id, String marca, String modelo) {
+        
+        Estoque estoque = new Estoque<>(modelo, marca, modelo, null);
+        System.out.println("Item no estoque adicionado com sucesso.");
+    }
+
     public void adicionarGerente(int id, String nome, double salario, String departamento) {
-        Gerente gerente = new Gerente(id, nome, salario, departamento);
+
+        Gerente gerente = new Gerente(id, nome, departamento, departamento, nome, departamento);
         gerentes.add(gerente);
         System.out.println("Gerente adicionado com sucesso.");
     }
 
+    public void adicionarFuncionario(int id, String marca, String modelo) {
+        
+        Funcionario funcionario = new Funcionario(modelo, id, modelo, modelo, marca, modelo);
+        funcionarios.add(funcionario);
+        System.out.println("Funcionário adicionado com sucesso.");
+    }
+
     public void adicionarEstagiario(int id, String nome, double salario, int horasSemanais) {
-        Estagiario estagiario = new Estagiario(id, nome, salario, horasSemanais);
+
+        Estagiario estagiario = new Estagiario(nome, id, nome, nome, nome, nome);
         estagiarios.add(estagiario);
         System.out.println("Estagiário adicionado com sucesso.");
     }
 
     // Métodos para remover entidades
     public void removerPeca(int id) {
-        for (Peca p : pecas) {
-            if (p.getId() == id) {
+
+        for (Pecas p : pecas) {
+
+            if (pecas.getId() == id) {
                 pecas.remove(p);
                 System.out.println("Peça removida com sucesso.");
+
                 return;
             }
         }
+
         System.out.println("Peça não encontrada.");
     }
 
     public void removerCarro(int id) {
+
         for (Carro c : carros) {
+
             if (c.getId() == id) {
                 carros.remove(c);
                 System.out.println("Carro removido com sucesso.");
                 return;
             }
         }
+
         System.out.println("Carro não encontrado.");
     }
 
+    public void removerCaminhonete(int id) {
+
+        for (Caminhonete ca : caminhonetes) {
+
+            if (ca.getId() == id) {
+                
+                caminhonetes.remove(e);
+                System.out.println("Caminhonete removida com sucesso.");
+                return;
+            }
+        }
+        System.out.println("Estagiário não encontrado.");
+    }
+
     public void removerGerente(int id) {
+
         for (Gerente g : gerentes) {
+
             if (g.getId() == id) {
+
                 gerentes.remove(g);
                 System.out.println("Gerente removido com sucesso.");
                 return;
             }
         }
+
         System.out.println("Gerente não encontrado.");
     }
 
+    public void removerFuncionario(int id) {
+
+        for (Funcionario f : funcionarios) {
+
+            if (f.getId() == id) {
+
+                estagiarios.remove(e);
+                System.out.println("Estagiário removido com sucesso.");
+                return;
+            }
+        }
+        System.out.println("Estagiário não encontrado.");
+    }
+
     public void removerEstagiario(int id) {
+
         for (Estagiario e : estagiarios) {
+
             if (e.getId() == id) {
+                
                 estagiarios.remove(e);
                 System.out.println("Estagiário removido com sucesso.");
                 return;

@@ -6,8 +6,6 @@ public class Pecas extends Estoque {
     private Float valor_custo;
     
 
-    private int receba;
-
     public Pecas(String id, String nome, String descrição, Float valor_Custo) {
         super(id, nome, descrição, valor_Custo);
         this.id = id;
@@ -55,6 +53,11 @@ public class Pecas extends Estoque {
                 ", Nome ='" + nome + '\'' +
                 ", Decription='" + description + '\'' +
                 ", Valor_Custo='" + valor_custo + '\'' + '}';
+    }
+
+    public void add(Pecas pecas) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'add'");
     }
 
 }

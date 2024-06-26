@@ -57,4 +57,9 @@ public class Caminhonete extends Veiculo{
                 '}';
     
     }
+
+    public void add(Caminhonete caminhonete) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'add'");
+    }
 }
