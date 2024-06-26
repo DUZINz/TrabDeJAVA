@@ -1,5 +1,7 @@
-public class Main {
+import java.util.ArrayList;
+import java.util.List;
 
+public class Main{
     @SuppressWarnings({ "unchecked", "unused" })
     public static void main (String[] args ) {
 
@@ -34,5 +36,7 @@ public class Main {
         // Adicionando peças na Classe Estoque
         estoquePecas.adicionar(pecas);
         estoquePecas2.adicionar(pecas2);
+
+        
     }
 }
