@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class ConcessionariaApp {
+public class ConcessionariaApp{
     private List<Pecas> pecas;
     private List<Carro> carros;
     private List<Gerente> gerentes;

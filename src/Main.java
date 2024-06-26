@@ -27,6 +27,9 @@ public class Main{
         Estoque<Carro> estoqueCarros = new Estoque<>(null, null, null, null);
         Estoque<Carro> estoqueCarros2 = new Estoque<>(null, null, null, null);
 
+        Estoque<Caminhonete> estoqueCaminhonete = new Estoque<>(null, null, null, null);
+        Estoque<Caminhonete> estoquecamiEstoque2 = new Estoque<>(null, null, null, null);
+        
         // Adicionando carros no estoque
         estoqueCarros.adicionar(carro);
         estoqueCarros.adicionar(carro2);

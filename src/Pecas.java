@@ -4,9 +4,7 @@ public class Pecas extends Estoque {
     private String nome;
     private String description;
     private Float valor_custo;
-    
-
-    private int receba;
+  
 
     public Pecas(String id, String nome, String descrição, Float valor_Custo) {
         super(id, nome, descrição, valor_Custo);
