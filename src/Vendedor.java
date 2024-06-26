@@ -1,4 +1,4 @@
-public class Vendedor extends Pessoa{
+public class Vendedor extends Pessoa {
 
     private String nome;
     private int idade;
@@ -9,14 +9,14 @@ public class Vendedor extends Pessoa{
 
     public Vendedor(String nome, String cpf, String endereco, String email, String telefone_Celular, int idade) {
         super(nome, idade, cpf, endereco, email, telefone_Celular);
-        
+
         this.nome = nome;
         this.idade = idade;
         this.cpf = cpf;
         this.endereco = endereco;
         this.email = email;
         this.telefone_Celular = telefone_Celular;
-        
+
     }
 
     public String getNome() {
@@ -67,5 +67,4 @@ public class Vendedor extends Pessoa{
         this.telefone_Celular = telefone_Celular;
     }
 
-    
 }

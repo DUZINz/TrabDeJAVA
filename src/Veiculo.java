@@ -1,5 +1,5 @@
 public class Veiculo {
-    
+
     private String nome;
     private String modelo;
     private int ano;
@@ -8,7 +8,7 @@ public class Veiculo {
     protected boolean ligar;
     protected boolean desligar;
 
-    public Veiculo(String nome, String modelo, int ano, int numchassi, String cor){
+    public Veiculo(String nome, String modelo, int ano, int numchassi, String cor) {
 
         this.nome = nome;
         this.modelo = modelo;
@@ -19,16 +19,14 @@ public class Veiculo {
         this.desligar = false;
     }
 
-
     public String getNome() {
         return nome;
     }
 
-
     public void setNome(String nome) {
         this.nome = nome;
     }
-    
+
     public String getModelo() {
         return modelo;
     }
@@ -81,25 +79,25 @@ public class Veiculo {
         System.out.println("Desligando Veiculo!!");
     }
 
-    public void Acelerar(){
+    public void Acelerar() {
 
         System.out.println("Acelerando Veículo!!");
     }
 
-    public void Frear(){
+    public void Frear() {
 
         System.out.println("Freando veículo!!");
     }
 
     @Override
     public String toString() {
-        
+
         return "Veículo{" +
-        "nome='" + nome + '\'' +
-        "Modelo='" + modelo + '\'' +
-        ", Ano='" + ano + '\'' +
-        ", Numchassi='" + numchassi + '\'' +
-        ", Cor='" + cor + '\''+'}';
+                "nome='" + nome + '\'' +
+                "Modelo='" + modelo + '\'' +
+                ", Ano='" + ano + '\'' +
+                ", Numchassi='" + numchassi + '\'' +
+                ", Cor='" + cor + '\'' + '}';
     }
 
 }
