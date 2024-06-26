@@ -1,4 +1,4 @@
-public class Gerente extends Pessoa{
+public class Gerente extends Pessoa {
 
     private int idade;
     private String nome;
@@ -16,7 +16,7 @@ public class Gerente extends Pessoa{
         this.endereco = endereco;
         this.email = email;
         this.telefone_Celular = telefone_Celular;
-        
+
     }
 
     public int getIdade() {
@@ -67,5 +67,4 @@ public class Gerente extends Pessoa{
         this.telefone_Celular = telefone_Celular;
     }
 
-    
 }

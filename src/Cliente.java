@@ -1,4 +1,4 @@
-public class Cliente extends Pessoa{
+public class Cliente extends Pessoa {
 
     private String nome;
     private int idade;
@@ -16,7 +16,7 @@ public class Cliente extends Pessoa{
         this.endereco = endereco;
         this.email = email;
         this.telefone_Celular = telefone_Celular;
-       
+
     }
 
     public String getNome() {
@@ -67,5 +67,4 @@ public class Cliente extends Pessoa{
         this.telefone_Celular = telefone_Celular;
     }
 
-    
 }

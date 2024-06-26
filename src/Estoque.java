@@ -16,7 +16,7 @@ public class Estoque<E> {
         this.nome = nome;
         this.descrição = descrição;
         this.valor_Custo = valor_Custo;
-        
+
     }
 
     public String getID() {
@@ -59,11 +59,11 @@ public class Estoque<E> {
         this.itens = itens;
     }
 
-    public void adicionar(E item){
+    public void adicionar(E item) {
         itens.add(item);
     }
 
-    public void removeItem(E item){
+    public void removeItem(E item) {
         itens.remove(item);
     }
 
@@ -76,8 +76,8 @@ public class Estoque<E> {
     }
 
     @Override
-    public String toString(){
-        return  "Estoque{"   +
+    public String toString() {
+        return "Estoque{" +
                 "ID='" + id + '\'' +
                 ", Nome='" + nome + '\'' +
                 ", Descrição='" + descrição + '\'' +

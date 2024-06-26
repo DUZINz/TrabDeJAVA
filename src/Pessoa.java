@@ -1,4 +1,4 @@
-public class Pessoa {
+public abstract class Pessoa {
 
     private String nome;
     private int idade;
@@ -7,7 +7,6 @@ public class Pessoa {
     private String email;
     private String telefone_Celular;
 
-    
     public Pessoa(String nome, int idade, String cpf, String endereco, String email, String telefone_Celular) {
 
         this.nome = nome;
@@ -16,9 +15,8 @@ public class Pessoa {
         this.endereco = endereco;
         this.email = email;
         this.telefone_Celular = telefone_Celular;
-        
-    }
 
+    }
 
     public String getNome() {
         return nome;
@@ -28,11 +26,11 @@ public class Pessoa {
         this.nome = nome;
     }
 
-    public int getIdade(){
+    public int getIdade() {
         return idade;
     }
 
-    public void setIdade(int idade){
+    public void setIdade(int idade) {
         this.idade = idade;
     }
 
