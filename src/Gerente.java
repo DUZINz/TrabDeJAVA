@@ -67,4 +67,15 @@ public class Gerente extends Pessoa {
         this.telefone_Celular = telefone_Celular;
     }
 
+    @Override
+    public String toString() {
+        return "Gerente [idade=" + idade + ", nome=" + nome + ", cpf=" + cpf + ", endereco=" + endereco + ", email="
+                + email + ", telefone_Celular=" + telefone_Celular + "]";
+    }
+
+    public int getId() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getId'");
+    }
+
 }
