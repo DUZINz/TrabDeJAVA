@@ -439,6 +439,20 @@ public class ConcessionariaApp {
 
     // Método para adicionar carros
     public void adicionarCarro(String nome, String modelo, String marca, int ano, String numChassi, String cor) {
+
+        if (numChassi.length() != 9) {
+            System.out.println("Número do chassi deve ter exatamente 9 caracteres.");
+            return; // Retorna sem adicionar o carro
+        }
+
+        // Verifica se o número do chassi já existe na lista de carros
+        for (Carro carro : carros) {
+            if (carro.getNumChassi().equals(numChassi)) {
+                System.out.println("Número do chassi já existe. Não é possível adicionar o carro.");
+                return; // Retorna sem adicionar o carro
+            }
+        }
+
         Carro carro = new Carro(nome, modelo, marca, ano, numChassi, cor);
         carros.add(carro); // Adiciona à lista de carros
         salvarCarrosEmArquivo(); // Salva os carros no arquivo após adicionar
