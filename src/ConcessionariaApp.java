@@ -526,19 +526,19 @@ public class ConcessionariaApp {
                     System.out.print("Digite o ano do carro: ");
                     int anoCarro = scanner.nextInt();
                     scanner.nextLine(); // Limpar o buffer
-                    System.out.print("Digite o número do chassi do carro: [*1111111*] ");
+                    System.out.print("Digite o número do chassi do carro [*1111111*]: ");
                     String chassiCarro = scanner.nextLine();
                     System.out.print("Digite a cor do carro: ");
                     String corCarro = scanner.nextLine();
                     adicionarCarro(nomeCarro, modeloCarro, marcaCarro, anoCarro, chassiCarro, corCarro);
                     break;
                 case 2:
-                    System.out.print("Digite o número do chassi do carro a ser removido: [*1111111*] ");
+                    System.out.print("Digite o número do chassi do carro a ser removido [*1111111*] :");
                     String chassiRemover = scanner.nextLine();
                     removerCarro(chassiRemover);
                     break;
                 case 3:
-                    System.out.print("Digite o número do chassi do carro a ser buscado: [*1111111*]");
+                    System.out.print("Digite o número do chassi do carro a ser buscado [*1111111*] :");
                     String chassiBuscar = scanner.nextLine();
                     Carro carroEncontrado = buscarCarroPorChassi(chassiBuscar);
                     if (carroEncontrado != null) {
