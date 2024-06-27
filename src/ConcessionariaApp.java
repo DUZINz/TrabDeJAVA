@@ -19,8 +19,10 @@ public class ConcessionariaApp {
     public ConcessionariaApp() {
         this.estoquePecas = new Estoque<>();
         this.estoqueCarros = new Estoque<>();
+        this.carros = new ArrayList<>();
         clientes = new ArrayList<>();
         funcionarios = new ArrayList<>();
+
         carregarClientesDoArquivo();
         carregarCarrosDoArquivo();
         carregarFuncionariosDoArquivo();
