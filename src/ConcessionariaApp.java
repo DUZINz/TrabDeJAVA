@@ -448,26 +448,26 @@ public class ConcessionariaApp {
 
     // Método para remover carros
     public void removerCarro(String numChassi) {
-        Iterator<Carro> iterator = estoqueCarros.getLista().iterator();
+        Iterator<Carro> iterator = carros.iterator();
         boolean encontrado = false;
         while (iterator.hasNext()) {
             Carro carro = iterator.next();
             if (carro.getNumChassi().equals(numChassi)) {
-                iterator.remove(); // Remove o carro usando o iterator
-                salvarCarrosEmArquivo(); // Atualiza o arquivo após remover o carro
-                System.out.println("Carro removido com sucesso.");
+                iterator.remove(); // Remove o carro da lista de carros usando o iterator
+                System.out.println("Carro removido da lista de carros.");
                 encontrado = true;
                 break;
             }
         }
+
         if (!encontrado) {
-            System.out.println("Carro não encontrado.");
+            System.out.println("Carro não encontrado na lista de carros.");
         }
     }
 
     // Método para buscar carros
     public Carro buscarCarroPorChassi(String numChassi) {
-        for (Carro carro : estoqueCarros.getLista()) {
+        for (Carro carro : carros) {
             if (carro.getNumChassi().equals(numChassi)) {
                 return carro;
             }
@@ -478,7 +478,7 @@ public class ConcessionariaApp {
     // Método para exibir todos os carros
     public void exibirCarros() {
         System.out.println("Lista de Carros:");
-        for (Carro carro : estoqueCarros.getLista()) {
+        for (Carro carro : carros) {
             System.out.println(carro);
         }
     }
