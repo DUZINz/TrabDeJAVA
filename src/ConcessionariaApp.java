@@ -14,6 +14,7 @@ public class ConcessionariaApp {
     private Estoque<Carro> estoqueCarros;
     private List<Clientes> clientes;
     private List<Funcionarios> funcionarios;
+    private List<Carro> carros;
 
     public ConcessionariaApp() {
         this.estoquePecas = new Estoque<>();
@@ -235,7 +236,7 @@ public class ConcessionariaApp {
                 writer.println(cliente.getId() + "," + cliente.getNome() + "," + cliente.getEndereco() + ","
                         + cliente.getTelefone());
             }
-            System.out.println("Clientes salvos no arquivo " + arquivoClientes);
+            System.out.println(arquivoClientes + " Foi Atualizado com sucesso! ");
         } catch (IOException e) {
             System.out.println("Erro ao salvar clientes no arquivo " + arquivoClientes + ": " + e.getMessage());
         }
@@ -358,7 +359,8 @@ public class ConcessionariaApp {
                         + funcionario.getCpf() + "," + funcionario.getEndereco() + "," + funcionario.getEmail() + ","
                         + funcionario.getTelefone_Celular());
             }
-            System.out.println("Funcionários salvos no arquivo " + arquivoFuncionarios);
+            System.out.println(arquivoFuncionarios + " Foi Atualizado com sucesso! ");
+
         } catch (IOException e) {
             System.out.println("Erro ao salvar funcionários no arquivo " + arquivoFuncionarios + ": " + e.getMessage());
         }
@@ -437,7 +439,7 @@ public class ConcessionariaApp {
     // Método para adicionar carros
     public void adicionarCarro(String nome, String modelo, String marca, int ano, String numChassi, String cor) {
         Carro carro = new Carro(nome, modelo, marca, ano, numChassi, cor);
-        estoqueCarros.adicionar(carro);
+        carros.add(carro); // Adiciona à lista de carros
         salvarCarrosEmArquivo(); // Salva os carros no arquivo após adicionar
         System.out.println("Carro adicionado com sucesso.");
     }
@@ -487,7 +489,7 @@ public class ConcessionariaApp {
                 writer.println(carro.getNome() + "," + carro.getModelo() + "," + carro.getMarca() + ","
                         + carro.getAno() + "," + carro.getNumChassi() + "," + carro.getCor());
             }
-            System.out.println("Carros salvos no arquivo " + arquivoCarros);
+            System.out.println(arquivoCarros + " Foi Atualizado com sucesso! ");
         } catch (IOException e) {
             System.out.println("Erro ao salvar carros no arquivo " + arquivoCarros + ": " + e.getMessage());
         }
@@ -717,7 +719,7 @@ public class ConcessionariaApp {
                 writer.println(peca.getId() + "," + peca.getNome() + "," + peca.getQtd() + ","
                         + peca.getValorCusto());
             }
-            System.out.println("Peças salvas no arquivo " + arquivoPecas);
+            System.out.println(arquivoPecas + " Foi Atualizado com sucesso!\n");
         } catch (IOException e) {
             System.out.println("Erro ao salvar peças no arquivo " + arquivoPecas + ": " + e.getMessage());
         }
@@ -728,7 +730,7 @@ public class ConcessionariaApp {
         Peca peca = new Peca(id, nome, quantidade, valorCusto);
         estoquePecas.adicionar(peca);
         salvarPecasEmArquivo(); // Salva as peças no arquivo após adicionar
-        System.out.println("Peça adicionada com sucesso.");
+        System.out.println("Peça adicionada ao estoque com sucesso.");
     }
 
     public void removerPeca(String id) {
@@ -739,7 +741,7 @@ public class ConcessionariaApp {
             if (peca.getId().equals(id)) {
                 iterator.remove(); // Remove a peça usando o iterator
                 salvarPecasEmArquivo(); // Atualiza o arquivo após remover a peça
-                System.out.println("Peça removida com sucesso.");
+                System.out.println("Peça removida do estoque com sucesso.");
                 encontrado = true;
                 break;
             }
@@ -767,31 +769,33 @@ public class ConcessionariaApp {
 
     // Método para adicionar carro ao estoque
     public void adicionarCarroAoEstoque(String numChassi) {
-        Carro carroExistente = estoqueCarros.buscarCarroPorChassi(numChassi);
+        // Verifica se o carro já está na lista de carros
+        Carro carroExistente = buscarCarroPorChassi(numChassi);
+        if (carroExistente == null) {
+            System.out.println("Erro: O carro com número de chassi " + numChassi + " não está cadastrado.");
+            return;
+        }
 
-        if (carroExistente != null) {
+        // Verifica se o carro já está no estoque
+        Carro carroNoEstoque = estoqueCarros.buscarCarroPorChassi(numChassi);
+        if (carroNoEstoque != null) {
             System.out.println("Erro: O carro com número de chassi " + numChassi + " já está no estoque.");
             return;
         }
 
-        Carro novoCarro = buscarCarroPorChassi(numChassi);
-        if (novoCarro != null) {
-            estoqueCarros.adicionar(novoCarro);
-            salvarCarrosEmArquivo(); // Salva os carros no arquivo após adicionar ao estoque
-            System.out.println("Carro adicionado ao estoque com sucesso.");
-        } else {
-            System.out.println("Carro não encontrado para adicionar ao estoque.");
-        }
+        // Adiciona o carro ao estoque
+        estoqueCarros.adicionar(carroExistente);
+        salvarCarrosEmArquivo(); // Salva os carros no arquivo após adicionar ao estoque
+        System.out.println("Carro adicionado ao estoque com sucesso.");
     }
 
-    // Método para buscar carro no estoque por número de chassi
-    public Carro buscarCarroNoEstoque(String numChassi) {
-        for (Carro carro : estoqueCarros.getLista()) {
+    private Carro buscarCarroNoEstoque(String numChassi) {
+        for (Carro carro : carros) {
             if (carro.getNumChassi().equals(numChassi)) {
                 return carro;
             }
         }
-        return null; // Retorna null se o carro não for encontrado no estoque
+        return null; // Retorna null se o carro não for encontrado na lista de carros
     }
 
     // Método para remover carro do estoque
