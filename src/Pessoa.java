@@ -67,13 +67,12 @@ public abstract class Pessoa {
 
     @Override
     public String toString() {
-        return "Pessoa[" +
-                "Nome :'" + nome + '\'' +
-                "Idade :'" + idade + '\'' +
-                ", cpf :'" + cpf + '\'' +
-                ", Endereco :'" + endereco + '\'' +
-                ", Email :'" + email + '\'' +
-                ", Telefone Celular : '" + telefone_Celular + '\'' +
-                ']';
+        return "[" + "Pessoa [" + "Nome : " + nome + "]" +
+                " [ Idade : " + idade + "]" +
+                " [ CPF :'" + cpf + "]" +
+                " [ Endereco :'" + endereco + "]" +
+                " [ Email :'" + email + "]" +
+                " [ Telefone Celular : '" + telefone_Celular + "]" +
+                "]";
     }
 }

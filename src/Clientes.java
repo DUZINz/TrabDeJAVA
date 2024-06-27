@@ -13,7 +13,6 @@ public class Clientes {
         this.telefone = telefone;
     }
 
-    // Getters e setters
     public int getId() {
         return id;
     }
