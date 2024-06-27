@@ -2,16 +2,18 @@ public class Veiculo {
 
     private String nome;
     private String modelo;
+    private String marca;
     private int ano;
-    protected int numchassi;
+    protected String numchassi;
     private String cor;
     protected boolean ligar;
     protected boolean desligar;
 
-    public Veiculo(String nome, String modelo, int ano, int numchassi, String cor) {
+    public Veiculo(String nome, String modelo, String marca, int ano, String numchassi, String cor) {
 
         this.nome = nome;
         this.modelo = modelo;
+        this.marca = marca;
         this.ano = ano;
         this.numchassi = numchassi;
         this.cor = cor;
@@ -35,6 +37,13 @@ public class Veiculo {
         this.modelo = modelo;
     }
 
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
     public int getAno() {
         return ano;
     }
@@ -43,11 +52,11 @@ public class Veiculo {
         this.ano = ano;
     }
 
-    public int getNumchassi() {
+    public String getNumchassi() {
         return numchassi;
     }
 
-    public void setNumchassi(int numchassi) {
+    public void setNumchassi(String numchassi) {
         this.numchassi = numchassi;
     }
 
@@ -95,6 +104,7 @@ public class Veiculo {
         return "Veículo{" +
                 "nome='" + nome + '\'' +
                 "Modelo='" + modelo + '\'' +
+                "Marca='" + marca + '\'' +
                 ", Ano='" + ano + '\'' +
                 ", Numchassi='" + numchassi + '\'' +
                 ", Cor='" + cor + '\'' + '}';

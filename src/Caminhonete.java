@@ -1,25 +1,35 @@
 public class Caminhonete extends Veiculo{
 
-    private int numchassi;
+    private String numchassi;
     private String nome;
+    private String marca;
     private String modelo;
     private int ano;
-
-    public Caminhonete(String nome, String modelo, int ano, int numchassi){
-       super(nome, modelo, ano, numchassi, modelo);
+    
+    public Caminhonete(String nome, String modelo,String marca, int ano, String numchassi){
+       super(nome, modelo, marca, ano, numchassi, modelo);
 
        this.nome = nome;
        this.modelo = modelo;
+       this.marca = marca;
        this.ano = ano;
        this.numchassi = numchassi;
 
     }
 
-    public int getNumchassi() {
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public String getNumchassi() {
         return numchassi;
     }
 
-    public void setNumchassi(int numchassi) {
+    public void setNumchassi(String numchassi) {
         this.numchassi = numchassi;
     }
 

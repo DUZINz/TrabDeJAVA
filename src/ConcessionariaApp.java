@@ -2,8 +2,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+<<<<<<< HEAD
 public class ConcessionariaApp {
 
+=======
+public class ConcessionariaApp{
+>>>>>>> 997b0ede736c7ac89730bcddfcb5b9f36becafb0
     private List<Pecas> pecas;
     private List<Carro> carros;
     private List<Caminhonete> caminhonetes;
