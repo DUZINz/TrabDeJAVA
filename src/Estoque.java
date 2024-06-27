@@ -1,89 +1,87 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Iterator;
 
-public class Estoque<E> {
+public class Estoque<T> {
+    private List<T> lista;
 
-    private List<E> itens;
-    private String id;
-    private String nome;
-    private int qtd;
-    private Float valor_Custo;
-
-    public Estoque(String id, String nome, int qtd, Float valor_Custo) {
-
-        this.itens = new ArrayList<>();
-        this.id = id;
-        this.nome = nome;
-        this.qtd = qtd;
-        this.valor_Custo = valor_Custo;
-
+    public Estoque() {
+        this.lista = new ArrayList<>();
     }
 
-    public String getID() {
-        return id;
+    public void removerPorId(String id) {
+        Iterator<T> iterator = lista.iterator();
+        while (iterator.hasNext()) {
+            T item = iterator.next();
+            if (item instanceof Peca) {
+                Peca peca = (Peca) item;
+                if (peca.getId().equals(id)) {
+                    iterator.remove();
+                    System.out.println("Peça removida com sucesso.");
+                    return;
+                }
+            }
+        }
+        System.out.println("Peça não encontrada.");
     }
 
-    public void setID(String id) {
-        this.id = id;
+    public void adicionar(T item) {
+        lista.add(item);
     }
 
-    public String getNome() {
-        return nome;
+    public Peca buscarPorId(String id) {
+        Iterator<T> iterator = lista.iterator();
+        while (iterator.hasNext()) {
+            T item = iterator.next();
+            if (item instanceof Peca) {
+                Peca peca = (Peca) item;
+                if (peca.getId().equals(id)) {
+                    return peca;
+                }
+            }
+        }
+        return null; // Caso não encontre a peça com o ID especificado
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public Carro removerPorChassi(String numChassi) {
+        Carro carro = buscarCarroPorChassi(numChassi);
+        if (carro != null) {
+            lista.remove(carro);
+            System.out.println("Carro removido com sucesso.");
+            return carro;
+        } else {
+            System.out.println("Carro não encontrado para remover.");
+            return null;
+        }
     }
 
-    public int getDescrição() {
-        return qtd;
+    public Carro buscarCarroPorChassi(String numChassi) {
+        for (T item : lista) {
+            if (item instanceof Carro) {
+                Carro carro = (Carro) item;
+                if (carro.getNumChassi().equals(numChassi)) {
+                    System.out.println("Carro encontrado:");
+                    System.out.println(carro);
+                    return carro;
+                }
+            }
+        }
+        System.out.println("Carro não encontrado.");
+        return null; // Retorna null se não encontrar o carro com o chassi especificado
     }
 
-    public void setDescrição(int qtd) {
-        this.qtd = qtd;
+    public void exibirTodos() {
+        if (lista.isEmpty()) {
+            System.out.println("Estoque de carros está vazio.");
+        } else {
+            System.out.println("Lista de Carros:");
+            for (T item : lista) {
+                System.out.println(item);
+            }
+        }
     }
 
-    public Float getValor_Custo() {
-        return valor_Custo;
+    public List<T> getLista() {
+        return lista;
     }
-
-    public void setValor_Custo(Float valor_Custo) {
-        this.valor_Custo = valor_Custo;
-    }
-
-    public List<E> getItens() {
-        return itens;
-    }
-
-    public void setItens(List<E> itens) {
-        this.itens = itens;
-    }
-
-    public void adicionar(E item) {
-        itens.add(item);
-    }
-
-    public void removeItem(E item) {
-        itens.remove(item);
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    @Override
-    public String toString() {
-        return "Estoque{" +
-                "ID='" + id + '\'' +
-                ", Nome='" + nome + '\'' +
-                ", Qtd='" + qtd + '\'' +
-                ", valor_Custo='" + valor_Custo + '\'' +
-                ", Itens" + itens +
-                '}';
-    }
-
 }

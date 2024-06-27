@@ -69,8 +69,9 @@ public class Gerente extends Pessoa {
 
     @Override
     public String toString() {
-        return "Gerente [idade=" + idade + ", nome=" + nome + ", cpf=" + cpf + ", endereco=" + endereco + ", email="
-                + email + ", telefone_Celular=" + telefone_Celular + "]";
+        return "Gerente [idade : " + idade + ", nome : " + nome + ", cpf :" + cpf + ", endereco :" + endereco
+                + ", email :"
+                + email + ", telefone_Celular :" + telefone_Celular + "]";
     }
 
     public int getId() {

@@ -1,5 +1,6 @@
-public class Cliente extends Pessoa {
+public class Funcionarios extends Pessoa {
 
+    private int id;
     private String nome;
     private int idade;
     private String cpf;
@@ -7,9 +8,11 @@ public class Cliente extends Pessoa {
     private String email;
     private String telefone_Celular;
 
-    public Cliente(String nome, int idade, String cpf, String endereco, String email, String telefone_Celular) {
+    public Funcionarios(int id, String nome, int idade, String cpf, String endereco, String email,
+            String telefone_Celular) {
         super(nome, idade, cpf, endereco, email, telefone_Celular);
 
+        this.id = id;
         this.nome = nome;
         this.idade = idade;
         this.cpf = cpf;
@@ -21,6 +24,14 @@ public class Cliente extends Pessoa {
 
     public String getNome() {
         return nome;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setNome(String nome) {

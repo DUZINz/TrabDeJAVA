@@ -1,0 +1,4 @@
+
+interface Estocavel {
+    String getIdentificador();
+}

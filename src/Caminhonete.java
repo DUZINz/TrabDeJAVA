@@ -1,19 +1,19 @@
-public class Caminhonete extends Veiculo{
+public class Caminhonete extends Veiculo {
 
-    private String numchassi;
+    private String numChassi;
     private String nome;
     private String marca;
     private String modelo;
     private int ano;
-    
-    public Caminhonete(String nome, String modelo,String marca, int ano, String numchassi){
-       super(nome, modelo, marca, ano, numchassi, modelo);
 
-       this.nome = nome;
-       this.modelo = modelo;
-       this.marca = marca;
-       this.ano = ano;
-       this.numchassi = numchassi;
+    public Caminhonete(String nome, String modelo, String marca, int ano, String numChassi) {
+        super(nome, modelo, marca, ano, numChassi, modelo);
+
+        this.nome = nome;
+        this.modelo = modelo;
+        this.marca = marca;
+        this.ano = ano;
+        this.numChassi = numChassi;
 
     }
 
@@ -25,12 +25,8 @@ public class Caminhonete extends Veiculo{
         this.marca = marca;
     }
 
-    public String getNumchassi() {
-        return numchassi;
-    }
-
-    public void setNumchassi(String numchassi) {
-        this.numchassi = numchassi;
+    public String getId() {
+        return numChassi;
     }
 
     public String getNome() {
@@ -60,21 +56,16 @@ public class Caminhonete extends Veiculo{
     @Override
     public String toString() {
         return "Carro{" +
-                ", nome='" + nome + '\'' +
-                ", modelo='" + modelo + '\'' +
-                ", ano='" + ano + '\'' +
-                ", Número do chassi='" + numchassi + '\'' +
+                ", nome :'" + nome + '\'' +
+                ", modelo :'" + modelo + '\'' +
+                ", ano :'" + ano + '\'' +
+                ", Número do chassi :'" + numChassi + '\'' +
                 '}';
-    
+
     }
 
     public void add(Caminhonete caminhonete) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'add'");
-    }
-
-    public int getId() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getId'");
     }
 }
