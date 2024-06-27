@@ -61,11 +61,5 @@ public class Caminhonete extends Veiculo {
                 ", ano :'" + ano + '\'' +
                 ", Número do chassi :'" + numChassi + '\'' +
                 '}';
-
-    }
-
-    public void add(Caminhonete caminhonete) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'add'");
     }
 }

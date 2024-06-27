@@ -67,13 +67,13 @@ public abstract class Pessoa {
 
     @Override
     public String toString() {
-        return "Pessoa{" +
+        return "Pessoa[" +
                 "Nome :'" + nome + '\'' +
                 "Idade :'" + idade + '\'' +
                 ", cpf :'" + cpf + '\'' +
                 ", Endereco :'" + endereco + '\'' +
                 ", Email :'" + email + '\'' +
                 ", Telefone Celular : '" + telefone_Celular + '\'' +
-                '}';
+                ']';
     }
 }

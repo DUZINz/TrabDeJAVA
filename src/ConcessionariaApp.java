@@ -1,5 +1,4 @@
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -294,6 +293,7 @@ public class ConcessionariaApp {
         if (!encontrado) {
             System.out.println("Funcionário não encontrado.");
         }
+    }
 
     // Método para buscar funcionários
     public Funcionarios buscarFuncionarioPorId(int id) {

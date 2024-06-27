@@ -65,10 +65,4 @@ public class Estagiario extends Pessoa {
     public void setTelefone_Celular(String telefone_Celular) {
         this.telefone_Celular = telefone_Celular;
     }
-
-    public int getId() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getId'");
-    }
-
 }
