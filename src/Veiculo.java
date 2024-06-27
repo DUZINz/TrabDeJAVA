@@ -15,7 +15,11 @@ public class Veiculo {
         this.modelo = modelo;
         this.marca = marca;
         this.ano = ano;
-        this.numChassi = numChassi;
+        if (numChassi.length() == 9) {
+            this.numChassi = numChassi;
+        } else {
+            throw new IllegalArgumentException("Número do chassi deve ter 9 caracteres.");
+        }
         this.cor = cor;
         this.ligar = false;
         this.desligar = false;
