@@ -120,12 +120,17 @@ public class ConcessionariaApp {
         int opcao;
 
         do {
-            System.out.println("\n=== Sistema da Concessionária ===");
-            System.out.println("1. Menu de Clientes");
-            System.out.println("2. Menu de Funcionários");
-            System.out.println("3. Menu de Carros");
-            System.out.println("4. Menu de Estoque");
-            System.out.println("0. Sair do Sistema");
+            System.out.println(" ==========================================");
+            System.out.println("|        SISTEMA DA CONCESSIONÁRIA         |");
+            System.out.println("|------------------------------------------|");
+            System.out.println("|                                          |");
+            System.out.println("|  1. Menu de Clientes                     |");
+            System.out.println("|  2. Menu de Funcionários                 |");
+            System.out.println("|  3. Menu de Carros                       |");
+            System.out.println("|  4. Menu de Estoque                      |");
+            System.out.println("|  0. Sair do Sistema                      |");
+            System.out.println("|                                          |");
+            System.out.println(" ========================================== ");
             System.out.print("Escolha uma opção: ");
             opcao = scanner.nextInt();
             scanner.nextLine(); // Limpar o buffer
@@ -144,7 +149,12 @@ public class ConcessionariaApp {
                     menuEstoque(scanner);
                     break;
                 case 0:
-                    System.out.println("Saindo do sistema...");
+                    System.out.println(" ========================================= ");
+                    System.out.println("|   Obrigado por utilizar JavaMotors!      |");
+                    System.out.println("|                                          |");
+                    System.out.println("|   Esperamos vê-lo novamente em breve!    |");
+                    System.out.println(" ========================================= ");
+
                     break;
                 default:
                     System.out.println("Opção inválida!");
@@ -215,12 +225,17 @@ public class ConcessionariaApp {
         int opcao;
 
         do {
-            System.out.println("\n=== Menu de Clientes ===");
-            System.out.println("1. Adicionar Cliente");
-            System.out.println("2. Remover Cliente");
-            System.out.println("3. Buscar Cliente");
-            System.out.println("4. Exibir Clientes");
-            System.out.println("0. Voltar ao menu principal");
+            System.out.println(" ==========================================");
+            System.out.println("|             MENU DE CLIENTES             |");
+            System.out.println("|------------------------------------------|");
+            System.out.println("|                                          |");
+            System.out.println("|  1. Adicionar Cliente                    |");
+            System.out.println("|  2. Remover Cliente                      |");
+            System.out.println("|  3. Buscar Cliente                       |");
+            System.out.println("|  4. Exibir Clientes                      |");
+            System.out.println("|  0. Voltar ao menu principal             |");
+            System.out.println("|                                          |");
+            System.out.println("===========================================");
             System.out.print("Escolha uma opção: ");
             opcao = scanner.nextInt();
             scanner.nextLine(); // Limpar o buffer
@@ -333,15 +348,20 @@ public class ConcessionariaApp {
         int opcao;
 
         do {
-            System.out.println("\n=== Menu de Funcionários ===");
-            System.out.println("1. Adicionar Funcionário");
-            System.out.println("2. Remover Funcionário");
-            System.out.println("3. Buscar Funcionário");
-            System.out.println("4. Exibir Funcionários");
-            System.out.println("0. Voltar ao menu principal");
+            System.out.println(" ============================================ ");
+            System.out.println("|            Menu de Funcionários            |");
+            System.out.println("|--------------------------------------------|");
+            System.out.println("|  1. Adicionar Funcionário                  |");
+            System.out.println("|  2. Remover Funcionário                    |");
+            System.out.println("|  3. Buscar Funcionário                     |");
+            System.out.println("|  4. Exibir Funcionários                    |");
+            System.out.println("|                                            |");
+            System.out.println("|  0. Voltar ao menu principal               |");
+            System.out.println("|--------------------------------------------|");
             System.out.print("Escolha uma opção: ");
             opcao = scanner.nextInt();
             scanner.nextLine(); // Limpar o buffer
+            System.out.println("=============================================");
 
             switch (opcao) {
                 case 1:
@@ -456,47 +476,51 @@ public class ConcessionariaApp {
         int opcao;
 
         do {
-            System.out.println("\n=== Menu de Carros ===");
-            System.out.println("1. Adicionar Carro");
-            System.out.println("2. Remover Carro");
-            System.out.println("3. Buscar Carro por Chassi");
-            System.out.println("4. Exibir Carros");
-            System.out.println("0. Voltar ao menu principal");
+            System.out.println(" ============================================");
+            System.out.println("|              Menu de Carros                |");
+            System.out.println("|--------------------------------------------|");
+            System.out.println("|  1. Adicionar Carro                        |");
+            System.out.println("|  2. Remover Carro                          |");
+            System.out.println("|  3. Buscar Carro por Chassi                |");
+            System.out.println("|  4. Exibir Carros                          |");
+            System.out.println("|  0. Voltar ao menu principal               |");
+            System.out.println("|--------------------------------------------|");
             System.out.print("Escolha uma opção: ");
             opcao = scanner.nextInt();
             scanner.nextLine(); // Limpar o buffer
+            System.out.println("=============================================");
 
             switch (opcao) {
                 case 1:
                     System.out.print("Digite o nome do carro: ");
                     String nomeCarro = scanner.nextLine();
-                    System.out.print("Digite o modelo do carro: ");
+                    System.out.print("Digite o modelo do carro[HATCH/SEDAN]: ");
                     String modeloCarro = scanner.nextLine();
                     System.out.print("Digite a marca do carro: ");
                     String marcaCarro = scanner.nextLine();
                     System.out.print("Digite o ano do carro: ");
                     int anoCarro = scanner.nextInt();
                     scanner.nextLine(); // Limpar o buffer
-                    System.out.print("Digite o número do chassi do carro: ");
+                    System.out.print("Digite o número do chassi do carro: [*1111111*] ");
                     String chassiCarro = scanner.nextLine();
                     System.out.print("Digite a cor do carro: ");
                     String corCarro = scanner.nextLine();
                     adicionarCarro(nomeCarro, modeloCarro, marcaCarro, anoCarro, chassiCarro, corCarro);
                     break;
                 case 2:
-                    System.out.print("Digite o número do chassi do carro a ser removido: ");
+                    System.out.print("Digite o número do chassi do carro a ser removido: [*1111111*] ");
                     String chassiRemover = scanner.nextLine();
                     removerCarro(chassiRemover);
                     break;
                 case 3:
-                    System.out.print("Digite o número do chassi do carro a ser buscado: ");
+                    System.out.print("Digite o número do chassi do carro a ser buscado: [*1111111*]");
                     String chassiBuscar = scanner.nextLine();
                     Carro carroEncontrado = buscarCarroPorChassi(chassiBuscar);
                     if (carroEncontrado != null) {
-                        System.out.println("Carro encontrado:");
+                        System.out.println("Carro encontrado:\n");
                         System.out.println(carroEncontrado);
                     } else {
-                        System.out.println("Carro não encontrado.");
+                        System.out.println("Carro não encontrado.\n");
                     }
                     break;
                 case 4:
@@ -517,13 +541,17 @@ public class ConcessionariaApp {
         int opcao;
 
         do {
-            System.out.println("\n=== Menu de Estoque ===");
-            System.out.println("1. Estoque de Peças");
-            System.out.println("2. Estoque de Carros");
-            System.out.println("0. Voltar ao menu principal");
+            System.out.println(" ============================================ ");
+            System.out.println("|              Menu de Estoque               |");
+            System.out.println("|--------------------------------------------|");
+            System.out.println("|  1. Estoque de Peças                       |");
+            System.out.println("|  2. Estoque de Carros                      |");
+            System.out.println("|  0. Voltar ao menu principal               |");
+            System.out.println("|--------------------------------------------|");
             System.out.print("Escolha uma opção: ");
             opcao = scanner.nextInt();
             scanner.nextLine(); // Limpar o buffer
+            System.out.println("=============================================");
 
             switch (opcao) {
                 case 1:
@@ -547,15 +575,20 @@ public class ConcessionariaApp {
         int opcao;
 
         do {
-            System.out.println("\n=== Estoque de Peças ===");
-            System.out.println("1. Adicionar Peça");
-            System.out.println("2. Remover Peça");
-            System.out.println("3. Buscar Peça");
-            System.out.println("4. Exibir Estoque de Peças");
-            System.out.println("0. Voltar ao menu anterior");
+            System.out.println(" ============================================ ");
+            System.out.println("|            Estoque de Peças                |");
+            System.out.println("|--------------------------------------------|");
+            System.out.println("|  1. Adicionar Peça                         |");
+            System.out.println("|  2. Remover Peça                           |");
+            System.out.println("|  3. Buscar Peça                            |");
+            System.out.println("|  4. Exibir Estoque de Peças                |");
+            System.out.println("|                                            |");
+            System.out.println("|  0. Voltar ao menu anterior                |");
+            System.out.println("|--------------------------------------------|");
             System.out.print("Escolha uma opção: ");
             opcao = scanner.nextInt();
             scanner.nextLine(); // Limpar o buffer
+            System.out.println("=============================================");
 
             switch (opcao) {
                 case 1:
@@ -605,15 +638,20 @@ public class ConcessionariaApp {
         int opcao;
 
         do {
-            System.out.println("\n=== Estoque de Carros ===");
-            System.out.println("1. Adicionar Carro ao Estoque");
-            System.out.println("2. Remover Carro do Estoque");
-            System.out.println("3. Buscar Carro no Estoque");
-            System.out.println("4. Exibir Estoque de Carros");
-            System.out.println("0. Voltar ao menu anterior");
+            System.out.println(" ============================================ ");
+            System.out.println("|              Estoque de Carros             |");
+            System.out.println("|--------------------------------------------|");
+            System.out.println("|  1. Adicionar Carro ao Estoque             |");
+            System.out.println("|  2. Remover Carro do Estoque               |");
+            System.out.println("|  3. Buscar Carro no Estoque                |");
+            System.out.println("|  4. Exibir Estoque de Carros               |");
+            System.out.println("|                                            |");
+            System.out.println("|  0. Voltar ao menu anterior                |");
+            System.out.println("|--------------------------------------------|");
             System.out.print("Escolha uma opção: ");
             opcao = scanner.nextInt();
             scanner.nextLine(); // Limpar o buffer
+            System.out.println("=============================================");
 
             switch (opcao) {
                 case 1:
