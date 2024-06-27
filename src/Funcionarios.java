@@ -30,28 +30,12 @@ public class Funcionarios extends Pessoa {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
     public int getIdade() {
         return idade;
     }
 
-    public void setIdade(int idade) {
-        this.idade = idade;
-    }
-
     public String getCpf() {
         return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
     }
 
     public String getEndereco() {
@@ -66,16 +50,8 @@ public class Funcionarios extends Pessoa {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getTelefone_Celular() {
         return telefone_Celular;
-    }
-
-    public void setTelefone_Celular(String telefone_Celular) {
-        this.telefone_Celular = telefone_Celular;
     }
 
 }

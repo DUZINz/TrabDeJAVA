@@ -24,16 +24,8 @@ public abstract class Pessoa {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
     public int getIdade() {
         return idade;
-    }
-
-    public void setIdade(int idade) {
-        this.idade = idade;
     }
 
     public String getCpf() {
@@ -44,24 +36,12 @@ public abstract class Pessoa {
         return endereco;
     }
 
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
-    }
-
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getTelefone_Celular() {
         return telefone_Celular;
-    }
-
-    public void setTelefone_Celular(String telefone_Celular) {
-        this.telefone_Celular = telefone_Celular;
     }
 
     @Override

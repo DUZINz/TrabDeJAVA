@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Iterator;
+import java.util.*;
 
 public class Estoque<T> {
     private List<T> lista;
@@ -10,6 +8,7 @@ public class Estoque<T> {
     }
 
     public void removerPorId(String id) {
+
         Iterator<T> iterator = lista.iterator();
         while (iterator.hasNext()) {
             T item = iterator.next();
