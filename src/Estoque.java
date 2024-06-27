@@ -6,15 +6,15 @@ public class Estoque<E> {
     private List<E> itens;
     private String id;
     private String nome;
-    private String descrição;
+    private int qtd;
     private Float valor_Custo;
 
-    public Estoque(String id, String nome, String descrição, Float valor_Custo) {
+    public Estoque(String id, String nome, int qtd, Float valor_Custo) {
 
         this.itens = new ArrayList<>();
         this.id = id;
         this.nome = nome;
-        this.descrição = descrição;
+        this.qtd = qtd;
         this.valor_Custo = valor_Custo;
 
     }
@@ -35,12 +35,12 @@ public class Estoque<E> {
         this.nome = nome;
     }
 
-    public String getDescrição() {
-        return descrição;
+    public int getDescrição() {
+        return qtd;
     }
 
-    public void setDescrição(String descrição) {
-        this.descrição = descrição;
+    public void setDescrição(int qtd) {
+        this.qtd = qtd;
     }
 
     public Float getValor_Custo() {
@@ -80,7 +80,7 @@ public class Estoque<E> {
         return "Estoque{" +
                 "ID='" + id + '\'' +
                 ", Nome='" + nome + '\'' +
-                ", Descrição='" + descrição + '\'' +
+                ", Qtd='" + qtd + '\'' +
                 ", valor_Custo='" + valor_Custo + '\'' +
                 ", Itens" + itens +
                 '}';

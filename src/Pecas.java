@@ -2,15 +2,15 @@ public class Pecas extends Estoque {
 
     private String id;
     private String nome;
-    private String description;
+    private int qtd;
     private Float valor_custo;
   
 
-    public Pecas(String id, String nome, String descrição, Float valor_Custo) {
-        super(id, nome, descrição, valor_Custo);
+    public Pecas(String id, String nome, int qtd, Float valor_Custo) {
+        super(id, nome, qtd, valor_Custo);
         this.id = id;
         this.nome = nome;
-        this.description = description;
+        this.qtd = qtd;
         this.valor_custo = valor_custo;
     }
 
@@ -30,12 +30,12 @@ public class Pecas extends Estoque {
         this.nome = nome;
     }
 
-    public String getDescription() {
-        return description;
+    public int getQtd() {
+        return qtd;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setQtd(int qtd) {
+        this.qtd = qtd;
     }
 
     public Float getValor_custo() {
@@ -51,7 +51,7 @@ public class Pecas extends Estoque {
         return "Pecas{" +
                 "ID='" + id + '\'' +
                 ", Nome ='" + nome + '\'' +
-                ", Decription='" + description + '\'' +
+                ", Qtd='" + qtd + '\'' +
                 ", Valor_Custo='" + valor_custo + '\'' + '}';
     }
 
