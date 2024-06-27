@@ -24,8 +24,8 @@ public class ConcessionariaApp {
     private void criarArquivoSeNecessario(String caminhoArquivo) throws IOException {
         File arquivo = new File(caminhoArquivo);
         if (!arquivo.exists()) {
-            arquivo.getParentFile().mkdirs(); // Cria os diretórios necessários
-            arquivo.createNewFile(); // Cria o arquivo
+            arquivo.getParentFile().mkdirs();
+            arquivo.createNewFile();
         }
     }
 
@@ -149,7 +149,7 @@ public class ConcessionariaApp {
             System.out.println(" ========================================== ");
             System.out.print("Escolha uma opção: ");
             opcao = scanner.nextInt();
-            scanner.nextLine(); // Limpar o buffer
+            scanner.nextLine();
 
             switch (opcao) {
                 case 1:
@@ -181,22 +181,20 @@ public class ConcessionariaApp {
         scanner.close();
     }
 
-    // Método para adicionar clientes
     public void adicionarCliente(int id, String nome, String endereco, String telefone) {
         Clientes cliente = new Clientes(id, nome, endereco, telefone);
         clientes.add(cliente);
-        salvarClientesEmArquivo(); // Salva os clientes no arquivo após adicionar
+        salvarClientesEmArquivo();
         System.out.println("Cliente adicionado com sucesso.");
     }
 
-    // Método para remover clientes
     public void removerCliente(int id) {
         Iterator<Clientes> iterator = clientes.iterator();
         while (iterator.hasNext()) {
             Clientes cliente = iterator.next();
             if (cliente.getId() == id) {
-                iterator.remove(); // Remove o cliente usando o iterator
-                salvarClientesEmArquivo(); // Atualiza o arquivo após remover o cliente
+                iterator.remove();
+                salvarClientesEmArquivo();
                 System.out.println("Cliente removido com sucesso.");
                 return;
             }
@@ -204,17 +202,15 @@ public class ConcessionariaApp {
         System.out.println("Cliente não encontrado.");
     }
 
-    // Método para buscar clientes
     public Clientes buscarClientePorId(int id) {
         for (Clientes cliente : clientes) {
             if (cliente.getId() == id) {
                 return cliente;
             }
         }
-        return null; // Retorna null se o cliente não for encontrado
+        return null;
     }
 
-    // Método para exibir todos os clientes
     public void exibirClientes() {
         System.out.println("Lista de Clientes:");
         for (Clientes cliente : clientes) {
@@ -222,7 +218,6 @@ public class ConcessionariaApp {
         }
     }
 
-    // Método para salvar clientes em arquivo
     private void salvarClientesEmArquivo() {
         String arquivoClientes = "data/clientes.txt";
         try (PrintWriter writer = new PrintWriter(new FileWriter(arquivoClientes))) {
@@ -236,7 +231,6 @@ public class ConcessionariaApp {
         }
     }
 
-    // Menu de Clientes
     public void menuClientes(Scanner scanner) {
         int opcao;
 
@@ -254,13 +248,13 @@ public class ConcessionariaApp {
             System.out.println("===========================================");
             System.out.print("Escolha uma opção: ");
             opcao = scanner.nextInt();
-            scanner.nextLine(); // Limpar o buffer
+            scanner.nextLine();
 
             switch (opcao) {
                 case 1:
                     System.out.print("Digite o ID do cliente: ");
                     int idCliente = scanner.nextInt();
-                    scanner.nextLine(); // Limpar o buffer
+                    scanner.nextLine();
                     System.out.print("Digite o nome do cliente: ");
                     String nomeCliente = scanner.nextLine();
                     System.out.print("Digite o endereço do cliente: ");
@@ -298,24 +292,22 @@ public class ConcessionariaApp {
         } while (opcao != 0);
     }
 
-    // Método para adicionar funcionários
     public void adicionarFuncionario(int id, String nome, int idade, String cpf, String endereco, String email,
             String telefone) {
         Funcionarios funcionario = new Funcionarios(id, nome, idade, cpf, endereco, email, telefone);
         funcionarios.add(funcionario);
-        salvarFuncionariosEmArquivo(); // Salva os funcionários no arquivo após adicionar
+        salvarFuncionariosEmArquivo();
         System.out.println("Funcionário adicionado com sucesso.");
     }
 
-    // Método para remover funcionários
     public void removerFuncionario(int id) {
         Iterator<Funcionarios> iterator = funcionarios.iterator();
         boolean encontrado = false;
         while (iterator.hasNext()) {
             Funcionarios funcionario = iterator.next();
             if (funcionario.getId() == id) {
-                iterator.remove(); // Remove o funcionário usando o iterator
-                salvarFuncionariosEmArquivo(); // Atualiza o arquivo após remover o funcionário
+                iterator.remove();
+                salvarFuncionariosEmArquivo();
                 System.out.println("Funcionário removido com sucesso.");
                 encontrado = true;
                 break;
@@ -326,17 +318,15 @@ public class ConcessionariaApp {
         }
     }
 
-    // Método para buscar funcionários
     public Funcionarios buscarFuncionarioPorId(int id) {
         for (Funcionarios funcionario : funcionarios) {
             if (funcionario.getId() == id) {
                 return funcionario;
             }
         }
-        return null; // Retorna null se o funcionário não for encontrado
+        return null;
     }
 
-    // Método para exibir todos os funcionários
     public void exibirFuncionarios() {
         System.out.println("Lista de Funcionários:");
         for (Funcionarios funcionario : funcionarios) {
@@ -344,7 +334,6 @@ public class ConcessionariaApp {
         }
     }
 
-    // Método para salvar funcionários em arquivo
     private void salvarFuncionariosEmArquivo() {
         String arquivoFuncionarios = "data/funcionarios.txt";
         try (PrintWriter writer = new PrintWriter(new FileWriter(arquivoFuncionarios))) {
@@ -360,7 +349,6 @@ public class ConcessionariaApp {
         }
     }
 
-    // Menu de Funcionários
     public void menuFuncionarios(Scanner scanner) {
         int opcao;
 
@@ -377,19 +365,19 @@ public class ConcessionariaApp {
             System.out.println("|--------------------------------------------|");
             System.out.print("Escolha uma opção: ");
             opcao = scanner.nextInt();
-            scanner.nextLine(); // Limpar o buffer
+            scanner.nextLine();
             System.out.println("=============================================");
 
             switch (opcao) {
                 case 1:
                     System.out.print("Digite o ID do funcionário: ");
                     int idFuncionario = scanner.nextInt();
-                    scanner.nextLine(); // Limpar o buffer
+                    scanner.nextLine();
                     System.out.print("Digite o nome do funcionário: ");
                     String nomeFuncionario = scanner.nextLine();
                     System.out.print("Digite a idade do funcionário: ");
                     int idadeFuncionario = scanner.nextInt();
-                    scanner.nextLine(); // Limpar o buffer
+                    scanner.nextLine();
                     System.out.print("Digite o CPF do funcionário: ");
                     String cpfFuncionario = scanner.nextLine();
                     System.out.print("Digite o endereço do funcionário: ");
@@ -430,29 +418,26 @@ public class ConcessionariaApp {
         } while (opcao != 0);
     }
 
-    // Método para adicionar carros
     public void adicionarCarro(String nome, String modelo, String marca, int ano, String numChassi, String cor) {
 
         if (numChassi.length() != 9) {
             System.out.println("Número do chassi deve ter exatamente 9 caracteres.");
-            return; // Retorna sem adicionar o carro
+            return;
         }
 
-        // Verifica se o número do chassi já existe na lista de carros
         for (Carro carro : carros) {
             if (carro.getNumChassi().equals(numChassi)) {
                 System.out.println("Número do chassi já existe. Não é possível adicionar o carro.");
-                return; // Retorna sem adicionar o carro
+                return;
             }
         }
 
         Carro carro = new Carro(nome, modelo, marca, ano, numChassi, cor);
-        carros.add(carro); // Adiciona à lista de carros
-        salvarCarrosEmArquivo(); // Salva os carros no arquivo após adicionar
+        carros.add(carro);
+        salvarCarrosEmArquivo();
         System.out.println("Carro adicionado com sucesso.");
     }
 
-    // Método para remover carros
     public void removerCarro(String numChassi) {
         Iterator<Carro> iterator = carros.iterator();
         boolean encontrado = false;
@@ -471,17 +456,15 @@ public class ConcessionariaApp {
         }
     }
 
-    // Método para buscar carros
     public Carro buscarCarroPorChassi(String numChassi) {
         for (Carro carro : carros) {
             if (carro.getNumChassi().equals(numChassi)) {
                 return carro;
             }
         }
-        return null; // Retorna null se o carro não for encontrado
+        return null;
     }
 
-    // Método para exibir todos os carros
     public void exibirCarros() {
         System.out.println("Lista de Carros:");
         for (Carro carro : carros) {
@@ -489,7 +472,6 @@ public class ConcessionariaApp {
         }
     }
 
-    // Método para salvar carros em arquivo
     private void salvarCarrosEmArquivo() {
         String arquivoCarros = "data/carros.txt";
         try (PrintWriter writer = new PrintWriter(new FileWriter(arquivoCarros))) {
@@ -518,7 +500,7 @@ public class ConcessionariaApp {
             System.out.println("|--------------------------------------------|");
             System.out.print("Escolha uma opção: ");
             opcao = scanner.nextInt();
-            scanner.nextLine(); // Limpar o buffer
+            scanner.nextLine();
             System.out.println("=============================================");
 
             switch (opcao) {
@@ -531,7 +513,7 @@ public class ConcessionariaApp {
                     String marcaCarro = scanner.nextLine();
                     System.out.print("Digite o ano do carro: ");
                     int anoCarro = scanner.nextInt();
-                    scanner.nextLine(); // Limpar o buffer
+                    scanner.nextLine();
                     System.out.print("Digite o número do chassi do carro [*1111111*]: ");
                     String chassiCarro = scanner.nextLine();
                     System.out.print("Digite a cor do carro: ");
@@ -567,7 +549,6 @@ public class ConcessionariaApp {
         } while (opcao != 0);
     }
 
-    // Menu de Estoque
     public void menuEstoque(Scanner scanner) {
         int opcao;
 
@@ -581,7 +562,7 @@ public class ConcessionariaApp {
             System.out.println("|--------------------------------------------|");
             System.out.print("Escolha uma opção: ");
             opcao = scanner.nextInt();
-            scanner.nextLine(); // Limpar o buffer
+            scanner.nextLine();
             System.out.println("=============================================");
 
             switch (opcao) {
@@ -601,7 +582,6 @@ public class ConcessionariaApp {
         } while (opcao != 0);
     }
 
-    // Menu de Estoque de Peças
     public void menuEstoquePecas(Scanner scanner) {
         int opcao;
 
@@ -618,7 +598,7 @@ public class ConcessionariaApp {
             System.out.println("|--------------------------------------------|");
             System.out.print("Escolha uma opção: ");
             opcao = scanner.nextInt();
-            scanner.nextLine(); // Limpar o buffer
+            scanner.nextLine();
             System.out.println("=============================================");
 
             switch (opcao) {
@@ -629,10 +609,10 @@ public class ConcessionariaApp {
                     String nomePeca = scanner.nextLine();
                     System.out.print("Digite a quantidade da peça: ");
                     int quantidadePeca = scanner.nextInt();
-                    scanner.nextLine(); // Limpar o buffer
+                    scanner.nextLine();
                     System.out.print("Digite o valor de custo da peça: ");
                     float valorCustoPeca = scanner.nextFloat();
-                    scanner.nextLine(); // Limpar o buffer
+                    scanner.nextLine();
                     adicionarPeca(idPeca, nomePeca, quantidadePeca, valorCustoPeca);
                     break;
                 case 2:
@@ -664,7 +644,6 @@ public class ConcessionariaApp {
         } while (opcao != 0);
     }
 
-    // Menu de Estoque de Carros
     public void menuEstoqueCarros(Scanner scanner) {
         int opcao;
 
@@ -681,7 +660,7 @@ public class ConcessionariaApp {
             System.out.println("|--------------------------------------------|");
             System.out.print("Escolha uma opção: ");
             opcao = scanner.nextInt();
-            scanner.nextLine(); // Limpar o buffer
+            scanner.nextLine();
             System.out.println("=============================================");
 
             switch (opcao) {
@@ -719,7 +698,6 @@ public class ConcessionariaApp {
         } while (opcao != 0);
     }
 
-    // Método para salvar peças em arquivo
     private void salvarPecasEmArquivo() {
         String arquivoPecas = "data/pecas.txt";
         try (PrintWriter writer = new PrintWriter(new FileWriter(arquivoPecas))) {
@@ -733,11 +711,10 @@ public class ConcessionariaApp {
         }
     }
 
-    // Método para adicionar peças
     public void adicionarPeca(String id, String nome, int quantidade, float valorCusto) {
         Peca peca = new Peca(id, nome, quantidade, valorCusto);
         estoquePecas.adicionar(peca);
-        salvarPecasEmArquivo(); // Salva as peças no arquivo após adicionar
+        salvarPecasEmArquivo();
         System.out.println("Peça adicionada ao estoque com sucesso.");
     }
 
@@ -747,8 +724,8 @@ public class ConcessionariaApp {
         while (iterator.hasNext()) {
             Peca peca = iterator.next();
             if (peca.getId().equals(id)) {
-                iterator.remove(); // Remove a peça usando o iterator
-                salvarPecasEmArquivo(); // Atualiza o arquivo após remover a peça
+                iterator.remove();
+                salvarPecasEmArquivo();
                 System.out.println("Peça removida do estoque com sucesso.");
                 encontrado = true;
                 break;
@@ -765,7 +742,7 @@ public class ConcessionariaApp {
                 return peca;
             }
         }
-        return null; // Retorna null se a peça não for encontrada
+        return null;
     }
 
     public void exibirEstoquePecas() {
@@ -775,25 +752,21 @@ public class ConcessionariaApp {
         }
     }
 
-    // Método para adicionar carro ao estoque
     public void adicionarCarroAoEstoque(String numChassi) {
-        // Verifica se o carro já está na lista de carros
         Carro carroExistente = buscarCarroPorChassi(numChassi);
         if (carroExistente == null) {
             System.out.println("Erro: O carro com número de chassi " + numChassi + " não está cadastrado.");
             return;
         }
 
-        // Verifica se o carro já está no estoque
         Carro carroNoEstoque = estoqueCarros.buscarCarroPorChassi(numChassi);
         if (carroNoEstoque != null) {
             System.out.println("Erro: O carro com número de chassi " + numChassi + " já está no estoque.");
             return;
         }
 
-        // Adiciona o carro ao estoque
         estoqueCarros.adicionar(carroExistente);
-        salvarCarrosEmArquivo(); // Salva os carros no arquivo após adicionar ao estoque
+        salvarCarrosEmArquivo();
         System.out.println("Carro adicionado ao estoque com sucesso.");
     }
 
@@ -803,18 +776,17 @@ public class ConcessionariaApp {
                 return carro;
             }
         }
-        return null; // Retorna null se o carro não for encontrado na lista de carros
+        return null;
     }
 
-    // Método para remover carro do estoque
     public void removerCarroDoEstoque(String numChassi) {
         Iterator<Carro> iterator = estoqueCarros.getLista().iterator();
         boolean encontrado = false;
         while (iterator.hasNext()) {
             Carro carro = iterator.next();
             if (carro.getNumChassi().equals(numChassi)) {
-                iterator.remove(); // Remove o carro usando o iterator
-                salvarCarrosEmArquivo(); // Atualiza o arquivo após remover do estoque
+                iterator.remove();
+                salvarCarrosEmArquivo();
                 System.out.println("Carro removido do estoque com sucesso.");
                 encontrado = true;
                 break;
