@@ -11,6 +11,9 @@ public abstract class Pessoa {
 
         this.nome = nome;
         this.idade = idade;
+        this.endereco = endereco;
+        this.email = email;
+        this.telefone_Celular = telefone_Celular;
         this.cpf = cpf;
         this.endereco = endereco;
         this.email = email;
@@ -35,10 +38,6 @@ public abstract class Pessoa {
 
     public String getCpf() {
         return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
     }
 
     public String getEndereco() {
@@ -67,7 +66,7 @@ public abstract class Pessoa {
 
     @Override
     public String toString() {
-        return "[" + "Pessoa [" + "Nome : " + nome + "]" +
+        return "[ id : " + cpf + "]" + "[" + "Pessoa [" + "Nome : " + nome + "]" +
                 " [ Idade : " + idade + "]" +
                 " [ CPF :'" + cpf + "]" +
                 " [ Endereco :'" + endereco + "]" +

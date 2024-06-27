@@ -6,8 +6,6 @@ public class Veiculo {
     private int ano;
     protected String numChassi;
     private String cor;
-    protected boolean ligar;
-    protected boolean desligar;
 
     public Veiculo(String nome, String modelo, String marca, int ano, String numChassi, String cor) {
 
@@ -21,8 +19,6 @@ public class Veiculo {
             throw new IllegalArgumentException("Número do chassi deve ter 9 caracteres.");
         }
         this.cor = cor;
-        this.ligar = false;
-        this.desligar = false;
     }
 
     public String getNome() {
@@ -72,47 +68,4 @@ public class Veiculo {
     public void setCor(String cor) {
         this.cor = cor;
     }
-
-    public boolean isLigar() {
-        return ligar;
-    }
-
-    public void setLigar(boolean ligar) {
-        this.ligar = true;
-
-        System.out.println("Ligando o veículo!!");
-    }
-
-    public boolean isDesligar() {
-        return desligar;
-    }
-
-    public void setDesligar(boolean desligar) {
-        this.desligar = true;
-
-        System.out.println("Desligando Veiculo!!");
-    }
-
-    public void Acelerar() {
-
-        System.out.println("Acelerando Veículo!!");
-    }
-
-    public void Frear() {
-
-        System.out.println("Freando veículo!!");
-    }
-
-    @Override
-    public String toString() {
-
-        return "Veículo{" +
-                "nome :'" + nome + '\'' +
-                "Modelo :'" + modelo + '\'' +
-                "Marca :'" + marca + '\'' +
-                ", Ano :'" + ano + '\'' +
-                ", Numchassi :'" + numChassi + '\'' +
-                ", Cor :'" + cor + '\'' + '}';
-    }
-
 }

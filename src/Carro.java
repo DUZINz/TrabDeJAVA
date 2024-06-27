@@ -46,9 +46,11 @@ class Carro implements Estocavel {
 
     @Override
     public String toString() {
-        return "Carro [" + "Nome : " + nome + "]" + "|" + "[ Modelo : " + modelo + "]" + "|" + "[ Marca : " + marca
-                + "]" + "|"
-                + "[ Ano :"
-                + ano + "]" + "|" + "[ Numero de Chassi : " + numChassi + "]" + "|" + "[ Cor : " + cor + "]";
+        return "Carro [" + "Nome : " + nome + "]" +
+                "|" + "[ Modelo : " + modelo + "]" +
+                "|" + "[ Marca : " + marca + "]" +
+                "|" + "[ Ano :" + ano + "]" +
+                "|" + "[ Numero de Chassi : " + numChassi + "]" +
+                "|" + "[ Cor : " + cor + "]";
     }
 }

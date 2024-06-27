@@ -108,7 +108,8 @@ public class ConcessionariaApp {
                 System.out.println("Funcionários carregados do arquivo " + arquivoFuncionarios);
             }
         } catch (IOException e) {
-            System.out.println("Erro ao carregar funcionários do arquivo " + arquivoFuncionarios + ": " + e.getMessage());
+            System.out
+                    .println("Erro ao carregar funcionários do arquivo " + arquivoFuncionarios + ": " + e.getMessage());
         } catch (NumberFormatException e) {
             System.out.println("Erro de formato no arquivo de funcionários: " + e.getMessage());
         }

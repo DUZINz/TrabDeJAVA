@@ -34,8 +34,9 @@ class Peca implements Estocavel {
 
     @Override
     public String toString() {
-        return "Pecas{" + "Id :'" + id + '\'' + ", Nome :'" + nome + '\'' + ", Quantidade :" + qtd
-                + ", Valor de Custo :" + valorCusto
-                + '}';
+        return "[ Pecas ]" + " [ Id : " + id + "]" +
+                "[ Nome : " + nome + "]" +
+                " [ Quantidade : " + qtd + "]" +
+                " [ Valor de Custo : " + valorCusto + "]";
     }
 }
