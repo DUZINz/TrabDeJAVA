@@ -1,4 +1,5 @@
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -25,20 +26,31 @@ public class ConcessionariaApp {
         carregarPecasDoArquivo();
     }
 
+    private void criarArquivoSeNecessario(String caminhoArquivo) throws IOException {
+        File arquivo = new File(caminhoArquivo);
+        if (!arquivo.exists()) {
+            arquivo.getParentFile().mkdirs(); // Cria os diretórios necessários
+            arquivo.createNewFile(); // Cria o arquivo
+        }
+    }
+
     private void carregarClientesDoArquivo() {
         String arquivoClientes = "data/clientes.txt";
-        try (BufferedReader reader = new BufferedReader(new FileReader(arquivoClientes))) {
-            String linha;
-            while ((linha = reader.readLine()) != null) {
-                String[] dados = linha.split(",");
-                int id = Integer.parseInt(dados[0].trim());
-                String nome = dados[1].trim();
-                String endereco = dados[2].trim();
-                String telefone = dados[3].trim();
-                Clientes cliente = new Clientes(id, nome, endereco, telefone);
-                clientes.add(cliente);
+        try {
+            criarArquivoSeNecessario(arquivoClientes);
+            try (BufferedReader reader = new BufferedReader(new FileReader(arquivoClientes))) {
+                String linha;
+                while ((linha = reader.readLine()) != null) {
+                    String[] dados = linha.split(",");
+                    int id = Integer.parseInt(dados[0].trim());
+                    String nome = dados[1].trim();
+                    String endereco = dados[2].trim();
+                    String telefone = dados[3].trim();
+                    Clientes cliente = new Clientes(id, nome, endereco, telefone);
+                    clientes.add(cliente);
+                }
+                System.out.println("Clientes carregados do arquivo clientes.txt.");
             }
-            System.out.println("Clientes carregados do arquivo clientes.txt.");
         } catch (IOException e) {
             System.out.println("Erro ao carregar clientes do arquivo " + arquivoClientes + ": " + e.getMessage());
         } catch (NumberFormatException e) {
@@ -48,20 +60,23 @@ public class ConcessionariaApp {
 
     private void carregarCarrosDoArquivo() {
         String arquivoCarros = "data/carros.txt";
-        try (BufferedReader reader = new BufferedReader(new FileReader(arquivoCarros))) {
-            String linha;
-            while ((linha = reader.readLine()) != null) {
-                String[] dados = linha.split(",");
-                String nome = dados[0].trim();
-                String modelo = dados[1].trim();
-                String marca = dados[2].trim();
-                int ano = Integer.parseInt(dados[3].trim());
-                String numChassi = dados[4].trim();
-                String cor = dados[5].trim();
-                Carro carro = new Carro(nome, modelo, marca, ano, numChassi, cor);
-                estoqueCarros.adicionar(carro);
+        try {
+            criarArquivoSeNecessario(arquivoCarros);
+            try (BufferedReader reader = new BufferedReader(new FileReader(arquivoCarros))) {
+                String linha;
+                while ((linha = reader.readLine()) != null) {
+                    String[] dados = linha.split(",");
+                    String nome = dados[0].trim();
+                    String modelo = dados[1].trim();
+                    String marca = dados[2].trim();
+                    int ano = Integer.parseInt(dados[3].trim());
+                    String numChassi = dados[4].trim();
+                    String cor = dados[5].trim();
+                    Carro carro = new Carro(nome, modelo, marca, ano, numChassi, cor);
+                    estoqueCarros.adicionar(carro);
+                }
+                System.out.println("Carros carregados do arquivo " + arquivoCarros);
             }
-            System.out.println("Carros carregados do arquivo " + arquivoCarros);
         } catch (IOException e) {
             System.out.println("Erro ao carregar carros do arquivo " + arquivoCarros + ": " + e.getMessage());
         } catch (NumberFormatException e) {
@@ -71,21 +86,24 @@ public class ConcessionariaApp {
 
     private void carregarFuncionariosDoArquivo() {
         String arquivoFuncionarios = "data/funcionarios.txt";
-        try (BufferedReader reader = new BufferedReader(new FileReader(arquivoFuncionarios))) {
-            String linha;
-            while ((linha = reader.readLine()) != null) {
-                String[] dados = linha.split(",");
-                int id = Integer.parseInt(dados[0].trim());
-                String nome = dados[1].trim();
-                int idade = Integer.parseInt(dados[2].trim());
-                String cpf = dados[3].trim();
-                String endereco = dados[4].trim();
-                String email = dados[5].trim();
-                String telefone = dados[6].trim();
-                Funcionarios funcionario = new Funcionarios(id, nome, idade, cpf, endereco, email, telefone);
-                funcionarios.add(funcionario);
+        try {
+            criarArquivoSeNecessario(arquivoFuncionarios);
+            try (BufferedReader reader = new BufferedReader(new FileReader(arquivoFuncionarios))) {
+                String linha;
+                while ((linha = reader.readLine()) != null) {
+                    String[] dados = linha.split(",");
+                    int id = Integer.parseInt(dados[0].trim());
+                    String nome = dados[1].trim();
+                    int idade = Integer.parseInt(dados[2].trim());
+                    String cpf = dados[3].trim();
+                    String endereco = dados[4].trim();
+                    String email = dados[5].trim();
+                    String telefone = dados[6].trim();
+                    Funcionarios funcionario = new Funcionarios(id, nome, idade, cpf, endereco, email, telefone);
+                    funcionarios.add(funcionario);
+                }
+                System.out.println("Funcionários carregados do arquivo " + arquivoFuncionarios);
             }
-            System.out.println("Funcionários carregados do arquivo " + arquivoFuncionarios);
         } catch (IOException e) {
             System.out
                     .println("Erro ao carregar funcionários do arquivo " + arquivoFuncionarios + ": " + e.getMessage());
@@ -96,18 +114,21 @@ public class ConcessionariaApp {
 
     private void carregarPecasDoArquivo() {
         String arquivoPecas = "data/pecas.txt";
-        try (BufferedReader reader = new BufferedReader(new FileReader(arquivoPecas))) {
-            String linha;
-            while ((linha = reader.readLine()) != null) {
-                String[] dados = linha.split(",");
-                String id = dados[0].trim();
-                String nome = dados[1].trim();
-                int quantidade = Integer.parseInt(dados[2].trim());
-                float valorCusto = Float.parseFloat(dados[3].trim());
-                Peca peca = new Peca(id, nome, quantidade, valorCusto);
-                estoquePecas.adicionar(peca);
+        try {
+            criarArquivoSeNecessario(arquivoPecas);
+            try (BufferedReader reader = new BufferedReader(new FileReader(arquivoPecas))) {
+                String linha;
+                while ((linha = reader.readLine()) != null) {
+                    String[] dados = linha.split(",");
+                    String id = dados[0].trim();
+                    String nome = dados[1].trim();
+                    int quantidade = Integer.parseInt(dados[2].trim());
+                    float valorCusto = Float.parseFloat(dados[3].trim());
+                    Peca peca = new Peca(id, nome, quantidade, valorCusto);
+                    estoquePecas.adicionar(peca);
+                }
+                System.out.println("Peças carregadas do arquivo " + arquivoPecas);
             }
-            System.out.println("Peças carregadas do arquivo " + arquivoPecas);
         } catch (IOException e) {
             System.out.println("Erro ao carregar peças do arquivo " + arquivoPecas + ": " + e.getMessage());
         } catch (NumberFormatException e) {
